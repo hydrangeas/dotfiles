@@ -1,3 +1,19 @@
+"------------------------------------------------------------
+" for BUNDLE
+"------------------------------------------------------------
+set nocompatible               " be iMproved
+filetype off                   " required!
+
+Bundle 'html5.vim'
+Bundle 'Simple-Javascript-Indenter'
+Bundle 'jQuery'
+Bundle 'JSON.vim'
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+"------------------------------------------------------------
+
+
  " URL: http://vim.wikia.com/wiki/Example_vimrc
  " Authors: http://vim.wikia.com/wiki/Vim_on_Freenode
  " Description: A minimal, but feature rich, example .vimrc. If you are a
@@ -14,7 +30,7 @@
  " Set 'nocompatible' to ward off unexpected things that your distro might
  " have made, as well as sanely reset options when re-sourcing .vimrc
  " Vi互換モードをオフ（Vimの拡張機能を有効）
- set nocompatible
+" set nocompatible
  
  " Attempt to determine the type of a file based on its name and possibly its
  " contents.  Use this to allow intelligent auto-indenting for each filetype,
