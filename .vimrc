@@ -4,13 +4,21 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
 
-Bundle 'html5.vim'
-Bundle 'Simple-Javascript-Indenter'
-Bundle 'jQuery'
-Bundle 'JSON.vim'
-
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
+Bundle 'html5.vim'
+Bundle 'jQuery'
+Bundle 'JSON.vim'
+Bundle 'Better-CSS-Syntax-for-Vim'
+Bundle 'Better-Javascript-Indentation'
+
+" commnet out
+Bundle 'The-NERD-Commenter'
+
+filetype plugin indent on
 "------------------------------------------------------------
 
 
