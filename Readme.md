@@ -2,17 +2,24 @@
 
 ## vim ##
 
+Following commands are not need root permissions.
+
 ### get vimfiles ###
 
-    user$ cd $HOME
-    user$ git clone git@github.com:hydrangeas/dotfiles.git
+    cd $HOME
+    git clone git://github.com/hydrangeas/dotfiles.git
 
 ### link to vimfiles ###
 
-    user$ cd $HOME
-    user$ ln -s ./dotfiles/.vim .
-    user$ ln -s ./dotfiles/.vimrc .
+    cd $HOME
+    ln -s ./dotfiles/.vim .
+    ln -s ./dotfiles/.vimrc .
 
 ### vundle install ###
-open any file, and execute `:bundleinstall`
+
+    cd $HOME/dotfiles
+    git submodule init
+    git submodule update
+
+open any file, for example `.vimrc`, and execute `:BundleInstall`
 
