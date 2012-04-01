@@ -189,3 +189,5 @@ esac
 #
 [ -f ${HOME}/.zshrc.mine ] && source ${HOME}/.zshrc.mine
 
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
