@@ -35,12 +35,9 @@ esac
 ## Show branch name in Zsh's right prompt
 # See also: https://gist.github.com/uasi/214109
 #
-
 autoload -Uz VCS_INFO_get_data_git; VCS_INFO_get_data_git 2> /dev/null
-
 setopt prompt_subst
 setopt re_match_pcre
-
 function rprompt-git-current-branch {
   local name st color gitdir action
   if [[ "$PWD" =~ '/\.git(/.*)?$' ]]; then
@@ -64,12 +61,13 @@ function rprompt-git-current-branch {
   else
     color=%F{red}
   fi
-  echo "$color$name$action%f%b "
+  echo "$color$name$action%f " # not like to bold, so remove %b
 }
 RPROMPT='[`rprompt-git-current-branch`%~]' 
 #
 #-- end custom function for rprompt 
 #
+
 
 # auto change directory
 #
@@ -152,8 +150,6 @@ autoload zed
 setopt complete_aliases     # aliased ls needs if file/dir completions work
 
 alias where="command -v"
-alias j="jobs -l"
-
 case "${OSTYPE}" in
   freebsd*|darwin*)
     alias ls="ls -G -w"
@@ -162,16 +158,14 @@ case "${OSTYPE}" in
     alias ls="ls --color"
     ;;
 esac
-
+alias du="du -h"
+alias df="df -h"
+alias gl="git log --graph --pretty=format:%s"
+alias j="jobs -l"
 alias la="ls -a"
 alias lf="ls -F"
 alias ll="ls -l"
-
-alias du="du -h"
-alias df="df -h"
-
 alias su="su -l"
-
 
 ## terminal configuration
 #
@@ -227,4 +221,3 @@ esac
 #PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 
-alias gl="git log --graph --pretty=format:%s"
